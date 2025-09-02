@@ -220,6 +220,21 @@
     const urlParams = new URLSearchParams(window.location.search);
     const nome = urlParams.get("nome") || "Convidado(a)";
 
+    // Atualiza as meta tags para WhatsApp com o nome do convidado
+    const descricaoPersonalizada = nome !== "Convidado(a)" ? 
+      `Convite especial para ${nome} - Gabriel & Leliane - 01 de Novembro` :
+      "Gabriel & Leliane - 01 de Novembro";
+    
+    const tituloPersonalizado = nome !== "Convidado(a)" ? 
+      `Convite para ${nome} - Casamento Gabriel & Leliane` :
+      "Convite Casamento";
+
+    // Atualiza meta tags existentes
+    document.querySelector('meta[property="og:title"]').setAttribute("content", tituloPersonalizado);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", descricaoPersonalizada);
+    document.querySelector('meta[name="description"]').setAttribute("content", descricaoPersonalizada);
+    document.querySelector('title').textContent = tituloPersonalizado;
+
     // Mensagem elegante e formal com estilo caligráfico
     document.getElementById("mensagem").innerHTML = 
       `<span class="text-lg sm:text-xl lg:text-2xl">É</span> com <em class="font-semibold text-teal-700">imensa alegria</em> e <em class="font-semibold text-teal-700">corações transbordantes</em> que convidamos<br><br>
