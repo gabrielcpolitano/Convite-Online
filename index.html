@@ -144,8 +144,11 @@
         <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
       </div>
       
-      <div class="mt-6 sm:mt-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-yellow-50 to-white bg-opacity-60 rounded-2xl border border-yellow-200 backdrop-blur-sm">
-        <p id="mensagem" class="font-lato text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-light"></p>
+      <div class="mt-6 sm:mt-8 p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-yellow-50 via-white to-amber-50 bg-opacity-80 rounded-2xl border-2 border-yellow-300 border-opacity-30 backdrop-blur-sm shadow-inner">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-100 to-transparent opacity-30 rounded-xl"></div>
+          <p id="mensagem" class="font-playfair text-base sm:text-lg lg:text-xl text-gray-800 leading-relaxed font-normal italic relative z-10 tracking-wide text-center"></p>
+        </div>
       </div>
       
       <!-- Versículo Bíblico -->
@@ -214,10 +217,14 @@
     const urlParams = new URLSearchParams(window.location.search);
     const nome = urlParams.get("nome") || "Convidado(a)";
 
-    // Mensagem elegante e neutra
+    // Mensagem elegante e formal com estilo caligráfico
     document.getElementById("mensagem").innerHTML = 
-      `É com imensa alegria que convidamos <strong class="text-gray-800">${nome}</strong> para celebrar conosco o início de nossa vida a dois. 
-      Sua presença será uma honra e tornará este momento ainda mais especial e inesquecível. 💍✨`;
+      `<span class="text-lg sm:text-xl lg:text-2xl">É</span> com <em class="font-semibold text-yellow-700">imensa alegria</em> e <em class="font-semibold text-yellow-700">corações transbordantes</em> que convidamos<br><br>
+      <span class="font-bold text-xl sm:text-2xl lg:text-3xl text-amber-800 tracking-wider">${nome}</span><br><br>
+      para <em class="font-semibold text-yellow-700">celebrar conosco</em> este momento <em class="font-semibold text-yellow-700">sagrado</em> e <em class="font-semibold text-yellow-700">inesquecível</em>,<br>
+      onde duas almas se tornam <em class="font-semibold text-yellow-700">uma só</em> diante de Deus.<br><br>
+      <span class="text-base sm:text-lg text-gray-600 font-light">Sua presença abençoará nossa união e tornará este dia ainda mais especial.</span><br><br>
+      <span class="text-2xl sm:text-3xl"></span>`;
   </script>
 </body>
 </html>
