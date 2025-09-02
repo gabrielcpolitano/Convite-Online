@@ -2,15 +2,36 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Gerenciar Convites</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite Gerenciamento</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+
+  <!-- WhatsApp Meta Tags -->
+  <meta property="og:title" content="Convite Gerenciamento">
+  <meta property="og:description" content="Gabriel & Leliane">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta name="description" content="Gabriel & Leliane">
+
+  <link rel="stylesheet" href="g-style.css">
 </head>
 <body>
-  <h1>Gerar Link de Convite</h1>
-  <input type="text" id="nome" placeholder="Digite o nome do convidado">
-  <button onclick="gerarLink()">Gerar Link</button>
+  <div class="container">
+    <h1>✨ Gerar Link de Convite ✨</h1>
+    
+    <div class="form-group">
+      <input type="text" id="nome" placeholder="Digite o nome do convidado">
+      <button onclick="gerarLink()">Gerar Link</button>
+    </div>
 
-  <p id="link"></p>
+    <div id="resultado" style="display:none;">
+      <p id="link"></p>
+      <button id="copiarBtn" onclick="copiarLink()">Copiar Link</button>
+      <div id="popup" class="popup">✅ Link copiado com sucesso!</div>
+    </div>
+  </div>
 
   <script>
     function gerarLink() {
@@ -21,9 +42,25 @@
       }
       const baseUrl = window.location.origin + "/index.html";
       const url = `${baseUrl}?nome=${encodeURIComponent(nome)}`;
-      document.getElementById("link").innerHTML = `
-        <a href="${url}" target="_blank">${url}</a>
-      `;
+
+      document.getElementById("link").innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
+      document.getElementById("resultado").style.display = "block";
+      
+      // Salva o link no botão para facilitar copiar
+      document.getElementById("copiarBtn").setAttribute("data-link", url);
+    }
+
+    function copiarLink() {
+      const url = document.getElementById("copiarBtn").getAttribute("data-link");
+      navigator.clipboard.writeText(url).then(() => {
+        const popup = document.getElementById("popup");
+        popup.classList.add("show");
+
+        // Remove depois de 2.5s
+        setTimeout(() => {
+          popup.classList.remove("show");
+        }, 2500);
+      });
     }
   </script>
 </body>
