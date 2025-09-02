@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Convite Gerenciamento</title>
-
+  <title>Convite Casamento</title>
+  
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
-
+  
   <!-- WhatsApp Meta Tags -->
-  <meta property="og:title" content="Convite Gerenciamento">
-  <meta property="og:description" content="Gabriel & Leliane - Gerar Links de Convite">
+  <meta property="og:title" content="Convite Casamento">
+  <meta property="og:description" content="Gabriel & Leliane - 01 de Novembro">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
@@ -19,55 +19,37 @@
   <meta property="og:image:alt" content="Convite de Casamento Gabriel & Leliane">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
-  <meta name="description" content="Gabriel & Leliane - Gerar Links de Convite">
-
-  <link rel="stylesheet" href="g-style.css">
+  <meta name="description" content="Gabriel & Leliane - 01 de Novembro">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>✨ Gerar Link de Convite ✨</h1>
+  <div class="convite">
+    <h2 class="titulo">Convite de Casamento</h2>
+    <h1 class="nomes">Gabriel & Leliane</h1>
+    <p class="data">01 de Novembro</p>
     
-    <div class="form-group">
-      <input type="text" id="nome" placeholder="Digite o nome do convidado">
-      <button onclick="gerarLink()">Gerar Link</button>
+    <div class="mensagem">
+      <p id="mensagem"></p>
     </div>
-
-    <div id="resultado" style="display:none;">
-      <p id="link"></p>
-      <button id="copiarBtn" onclick="copiarLink()">Copiar Link</button>
-      <div id="popup" class="popup">✅ Link copiado com sucesso!</div>
+    
+    <div class="presente-section">
+      <p class="presente-texto">Se você ainda não nos presenteou, aqui embaixo está o site para poder nos presentear por o início dessa jornada:</p>
+      <a href="https://seu-site-de-presentes.com" target="_blank" class="botao-presente">
+        🎁 Enviar Presente
+      </a>
     </div>
   </div>
 
   <script>
-    function gerarLink() {
-      const nome = document.getElementById("nome").value.trim();
-      if (!nome) {
-        alert("Digite um nome!");
-        return;
-      }
-      const baseUrl = window.location.origin + "/index.html";
-      const url = `${baseUrl}?nome=${encodeURIComponent(nome)}`;
+    // Pega o parâmetro "nome" da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nome = urlParams.get("nome") || "Convidado(a)";
 
-      document.getElementById("link").innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
-      document.getElementById("resultado").style.display = "block";
-      
-      // Salva o link no botão para facilitar copiar
-      document.getElementById("copiarBtn").setAttribute("data-link", url);
-    }
-
-    function copiarLink() {
-      const url = document.getElementById("copiarBtn").getAttribute("data-link");
-      navigator.clipboard.writeText(url).then(() => {
-        const popup = document.getElementById("popup");
-        popup.classList.add("show");
-
-        // Remove depois de 2.5s
-        setTimeout(() => {
-          popup.classList.remove("show");
-        }, 2500);
-      });
-    }
+    // Mensagem elegante e neutra
+    document.getElementById("mensagem").innerHTML = 
+      `É com imensa alegria que convidamos <strong>${nome}</strong> para celebrar conosco o início de nossa vida a dois. 
+      Sua presença será uma honra e tornará este momento ainda mais especial e inesquecível. 💍✨`;
   </script>
 </body>
 </html>
