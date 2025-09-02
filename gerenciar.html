@@ -102,7 +102,7 @@
         alert("Digite um nome!");
         return;
       }
-      const baseUrl = window.location.origin + "/index.html";
+      const baseUrl = window.location.origin + "/";
       const url = `${baseUrl}?nome=${encodeURIComponent(nome)}`;
 
       document.getElementById("link").innerHTML = `<a href="${url}" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold hover:underline">${url}</a>`;
