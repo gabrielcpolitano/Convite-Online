@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar Convites</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Gerar Link de Convite</h1>
+  <input type="text" id="nome" placeholder="Digite o nome do convidado">
+  <button onclick="gerarLink()">Gerar Link</button>
+
+  <p id="link"></p>
+
+  <script>
+    function gerarLink() {
+      const nome = document.getElementById("nome").value.trim();
+      if (!nome) {
+        alert("Digite um nome!");
+        return;
+      }
+      const baseUrl = window.location.origin + "/index.html";
+      const url = `${baseUrl}?nome=${encodeURIComponent(nome)}`;
+      document.getElementById("link").innerHTML = `
+        <a href="${url}" target="_blank">${url}</a>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Convite de Casamento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="convite">
+    <h2 class="titulo">Convite de Casamento</h2>
+    <h1 class="nomes">Gabriel & Leliane</h1>
+    <p class="data">01 de Novembro</p>
+    
+    <div class="mensagem">
+      <p id="mensagem"></p>
+    </div>
+  </div>
+
+  <script>
+    // Pega o parâmetro "nome" da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nome = urlParams.get("nome") || "Convidado";
+
+    // Mostra no convite
+    document.getElementById("mensagem").innerText = 
+      `Querido(a) ${nome}, você é nosso convidado especial para compartilhar esse momento único. 💍✨`;
+  </script>
+</body>
+</html>
