@@ -10,7 +10,7 @@
   
   <!-- WhatsApp Meta Tags -->
   <meta property="og:title" content="Convite Casamento">
-  <meta property="og:description" id="og-description" content="Gabriel & Leliane - 01 de Novembro">
+  <meta property="og:description" content="" id="og-description">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="Convite de Casamento Gabriel & Leliane">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
-  <meta name="description" id="meta-description" content="Gabriel & Leliane - 01 de Novembro">
+  <meta name="description" content="Gabriel & Leliane - 01 de Novembro">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -220,10 +220,11 @@
     const urlParams = new URLSearchParams(window.location.search);
     const nome = urlParams.get("nome") || "Convidado(a)";
 
-    // Atualiza as meta tags com o nome do convidado
-    const descricaoPersonalizada = `Convite especial para ${nome} - Gabriel & Leliane - 01 de Novembro`;
-    document.getElementById("og-description").setAttribute("content", descricaoPersonalizada);
-    document.getElementById("meta-description").setAttribute("content", descricaoPersonalizada);
+    // Atualiza o og:description com o nome do convidado
+    const ogDescription = document.getElementById("og-description");
+    if (ogDescription) {
+      ogDescription.setAttribute("content", `Convite de casamento para ${nome} - Gabriel & Leliane - 01 de Novembro`);
+    }
 
     // Mensagem elegante e formal com estilo caligráfico
     document.getElementById("mensagem").innerHTML = 
