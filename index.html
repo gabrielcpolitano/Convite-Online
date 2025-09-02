@@ -43,19 +43,19 @@
       background: linear-gradient(145deg, #f8f8f8 0%, #ffffff 50%, #f5f5f5 100%);
     }
     
-    .gold-gradient {
-      background: linear-gradient(135deg, #d4af37, #f4e68a, #d4af37);
+    .mint-gradient {
+      background: linear-gradient(135deg, #2dd4bf, #67e8f9, #2dd4bf);
       background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      animation: goldShine 2s ease-in-out infinite alternate;
+      animation: mintShine 2s ease-in-out infinite alternate;
     }
     
     .button-gradient {
-      background: linear-gradient(135deg, #d4af37, #f4e68a, #d4af37);
+      background: linear-gradient(135deg, #2dd4bf, #67e8f9, #2dd4bf);
       background-size: 200% 200%;
-      animation: goldShine 3s ease-in-out infinite alternate;
+      animation: mintShine 3s ease-in-out infinite alternate;
     }
     
     .flor-bg-1 { background-image: url('./flor1.png'); }
@@ -63,7 +63,7 @@
     .flor-bg-2 { background-image: url('./flor2.png'); }
     .flor-bg-3 { background-image: url('./flor3.png'); }
     
-    @keyframes goldShine {
+    @keyframes mintShine {
       0% { background-position: 0% 50%; }
       100% { background-position: 100% 50%; }
     }
@@ -91,7 +91,10 @@
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-gray-700 via-gray-800 to-gray-700 flex items-center justify-center p-4 sm:p-8 lg:p-12 font-lato">
-  <div class="convite-gradient relative max-w-md sm:max-w-lg lg:max-w-xl w-full mx-auto rounded-3xl shadow-2xl p-8 sm:p-12 lg:p-16 border-2 border-yellow-400 overflow-hidden animate-fade-in">
+  <div class="convite-gradient relative max-w-md sm:max-w-lg lg:max-w-xl w-full mx-auto rounded-3xl shadow-2xl p-8 sm:p-12 lg:p-16 border-2 border-teal-400 overflow-hidden animate-fade-in">
+    
+    <!-- Background com transparência -->
+    <div class="absolute inset-0 rounded-3xl opacity-20 bg-cover bg-center bg-no-repeat z-0" style="background-image: url('./background.jpeg');"></div>
     
     <!-- Flores decorativas - visíveis em todas as telas com tamanhos responsivos -->
     <div class="absolute top-2 left-2 w-12 h-12 sm:top-4 sm:left-4 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 flor-bg-1 flor-corner animate-floral opacity-75 sm:opacity-90 -rotate-12"></div>
@@ -114,7 +117,7 @@
         Convite de Casamento
       </h2>
       
-      <h1 class="font-libertinus text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold gold-gradient drop-shadow-lg">
+      <h1 class="font-libertinus text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mint-gradient drop-shadow-lg">
         Gabriel & Leliane
       </h1>
       
@@ -126,7 +129,7 @@
         <!-- Local e Horário -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-gray-600">
           <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
@@ -134,19 +137,19 @@
           </div>
           
           <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
             <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">13:00</span>
           </div>
         </div>
         
-        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 h-0.5 bg-gradient-to-r from-transparent via-teal-400 to-transparent"></div>
       </div>
       
-      <div class="mt-6 sm:mt-8 p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-yellow-50 via-white to-amber-50 bg-opacity-80 rounded-2xl border-2 border-yellow-300 border-opacity-30 backdrop-blur-sm shadow-inner">
+      <div class="mt-6 sm:mt-8 p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-teal-50 via-white to-cyan-50 bg-opacity-80 rounded-2xl border-2 border-teal-300 border-opacity-30 backdrop-blur-sm shadow-inner">
         <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-100 to-transparent opacity-30 rounded-xl"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-teal-100 to-transparent opacity-30 rounded-xl"></div>
           <p id="mensagem" class="font-playfair text-base sm:text-lg lg:text-xl text-gray-800 leading-relaxed font-normal italic relative z-10 tracking-wide text-center"></p>
         </div>
       </div>
@@ -177,7 +180,7 @@
         <p class="font-lato text-xs sm:text-sm lg:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed font-light">
           Por favor, confirme sua presença em nosso casamento para que possamos nos organizar melhor:
         </p>
-        <a href="https://convidados.centralizando.com/" target="_blank" 
+        <a href="https://seu-site-de-lista-presenca.com" target="_blank" 
            class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -189,17 +192,17 @@
       </div>
       
       <!-- Presentes -->
-      <div class="mt-6 sm:mt-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-yellow-50 to-white bg-opacity-70 rounded-2xl border border-yellow-300">
+      <div class="mt-6 sm:mt-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-teal-50 to-white bg-opacity-70 rounded-2xl border border-teal-300">
         <div class="flex items-center justify-center gap-2 mb-4">
-          <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-1zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
           </svg>
-          <h3 class="font-playfair text-lg sm:text-xl text-yellow-700 font-semibold">Lista de Presentes</h3>
+          <h3 class="font-playfair text-lg sm:text-xl text-teal-700 font-semibold">Lista de Presentes</h3>
         </div>
         <p class="font-lato text-xs sm:text-sm lg:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed font-light">
           Se você ainda não nos presenteou, aqui embaixo está o site para poder nos presentear pelo início dessa jornada:
         </p>
-        <a href="https://www.centralizando.com" target="_blank" 
+        <a href="https://seu-site-de-presentes.com" target="_blank" 
            class="inline-block button-gradient text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -219,12 +222,12 @@
 
     // Mensagem elegante e formal com estilo caligráfico
     document.getElementById("mensagem").innerHTML = 
-      `<span class="text-lg sm:text-xl lg:text-2xl">É</span> com <em class="font-semibold text-yellow-700">imensa alegria</em> e <em class="font-semibold text-yellow-700">corações transbordantes</em> que convidamos<br><br>
-      <span class="font-bold text-xl sm:text-2xl lg:text-3xl text-amber-800 tracking-wider">${nome}</span><br><br>
-      para <em class="font-semibold text-yellow-700">celebrar conosco</em> este momento <em class="font-semibold text-yellow-700">sagrado</em> e <em class="font-semibold text-yellow-700">inesquecível</em>,<br>
-      onde duas almas se tornam <em class="font-semibold text-yellow-700">uma só</em> diante de Deus.<br><br>
+      `<span class="text-lg sm:text-xl lg:text-2xl">É</span> com <em class="font-semibold text-teal-700">imensa alegria</em> e <em class="font-semibold text-teal-700">corações transbordantes</em> que convidamos<br><br>
+      <span class="font-bold text-xl sm:text-2xl lg:text-3xl text-teal-800 tracking-wider">${nome}</span><br><br>
+      para <em class="font-semibold text-teal-700">celebrar conosco</em> este momento <em class="font-semibold text-teal-700">sagrado</em> e <em class="font-semibold text-teal-700">inesquecível</em>,<br>
+      onde duas almas se tornam <em class="font-semibold text-teal-700">uma só</em> diante de Deus.<br><br>
       <span class="text-base sm:text-lg text-gray-600 font-light">Sua presença abençoará nossa união e tornará este dia ainda mais especial.</span><br><br>
-      <span class="text-2xl sm:text-3xl"></span>`;
+      <span class="text-2xl sm:text-3xl">💍✨</span>`;
   </script>
 </body>
 </html>
