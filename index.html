@@ -21,37 +21,120 @@
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
   <meta name="description" content="Gabriel & Leliane - 01 de Novembro">
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&family=Libertinus+Serif+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-lato { font-family: 'Lato', sans-serif; }
+    .font-libertinus { font-family: 'Libertinus Serif Display', serif; }
+    
+    .convite-gradient {
+      background: linear-gradient(145deg, #f8f8f8 0%, #ffffff 50%, #f5f5f5 100%);
+    }
+    
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37, #f4e68a, #d4af37);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: goldShine 2s ease-in-out infinite alternate;
+    }
+    
+    .button-gradient {
+      background: linear-gradient(135deg, #d4af37, #f4e68a, #d4af37);
+      background-size: 200% 200%;
+      animation: goldShine 3s ease-in-out infinite alternate;
+    }
+    
+    .flor-bg-1 { background-image: url('./flor1.png'); }
+    .flor-bg-1r { background-image: url('./flor1-r.png'); }
+    .flor-bg-2 { background-image: url('./flor2.png'); }
+    .flor-bg-3 { background-image: url('./flor3.png'); }
+    
+    @keyframes goldShine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    
+    @keyframes floralSway {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(2deg) scale(1.05); }
+      75% { transform: rotate(-2deg) scale(0.98); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .animate-floral { animation: floralSway 6s ease-in-out infinite; }
+    .animate-fade-in { animation: fadeIn 1.5s ease-in-out; }
+    
+    .flor-corner {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.2));
+    }
+  </style>
 </head>
-<body>
-  <div class="convite">
-    <!-- Flores realistas nos cantos -->
-    <div class="flor-canto-superior-esquerdo"></div>
-    <div class="flor-canto-superior-direito"></div>
+<body class="min-h-screen bg-gradient-to-br from-gray-700 via-gray-800 to-gray-700 flex items-center justify-center p-4 sm:p-8 lg:p-12 font-lato">
+  <div class="convite-gradient relative max-w-md sm:max-w-lg lg:max-w-xl w-full mx-auto rounded-3xl shadow-2xl p-8 sm:p-12 lg:p-16 border-2 border-yellow-400 overflow-hidden animate-fade-in">
     
-    <!-- Arranjos florais laterais -->
-    <div class="arranjo-floral-esquerdo"></div>
-    <div class="arranjo-floral-direito"></div>
+    <!-- Flores decorativas - visíveis em todas as telas com tamanhos responsivos -->
+    <div class="absolute top-2 left-2 w-12 h-12 sm:top-4 sm:left-4 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 flor-bg-1 flor-corner animate-floral opacity-75 sm:opacity-90 -rotate-12"></div>
+    <div class="absolute top-2 right-2 w-12 h-12 sm:top-4 sm:right-4 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 flor-bg-1r flor-corner animate-floral opacity-75 sm:opacity-90 rotate-12"></div>
     
-    <!-- Flores inferiores -->
-    <div class="flores-inferiores">
-      <div class="flor-central"></div>
+    <!-- Arranjos laterais - agora visíveis em mobile também -->
+    <div class="absolute top-1/2 -left-1 w-8 h-10 sm:-left-2 sm:w-12 sm:h-16 lg:w-16 lg:h-20 flor-bg-3 flor-corner -rotate-20 transform -translate-y-1/2 animate-floral opacity-70 sm:opacity-85"></div>
+    <div class="absolute top-1/2 -right-1 w-8 h-10 sm:-right-2 sm:w-12 sm:h-16 lg:w-16 lg:h-20 flor-bg-3 flor-corner rotate-25 transform -translate-y-1/2 scale-x-[-1] animate-floral opacity-70 sm:opacity-85"></div>
+    
+    <!-- Flores inferiores - simplificadas para mobile -->
+    <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-center gap-2 sm:gap-4 lg:gap-6 lg:bottom-4">
+      <div class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 flor-bg-2 flor-corner -rotate-12 animate-floral opacity-70 sm:opacity-80"></div>
+      <div class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 flor-bg-1 flor-corner rotate-6 animate-floral opacity-80 sm:opacity-90"></div>
+      <div class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 flor-bg-2 flor-corner rotate-12 animate-floral opacity-70 sm:opacity-80"></div>
     </div>
     
-    <h2 class="titulo">Convite de Casamento</h2>
-    <h1 class="nomes">Gabriel & Leliane</h1>
-    <p class="data">01 de Novembro</p>
-    
-    <div class="mensagem">
-      <p id="mensagem"></p>
-    </div>
-    
-    <div class="presente-section">
-      <p class="presente-texto">Se você ainda não nos presenteou, aqui embaixo está o site para poder nos presentear por o início dessa jornada:</p>
-      <a href="https://seu-site-de-presentes.com" target="_blank" class="botao-presente">
-        🎁 Enviar Presente
-      </a>
+    <!-- Conteúdo principal -->
+    <div class="relative z-10 text-center space-y-4 sm:space-y-6">
+      <h2 class="font-playfair text-lg sm:text-xl lg:text-2xl text-gray-600 italic font-normal">
+        Convite de Casamento
+      </h2>
+      
+      <h1 class="font-libertinus text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold gold-gradient drop-shadow-lg">
+        Gabriel & Leliane
+      </h1>
+      
+      <div class="relative">
+        <p class="font-lato text-base sm:text-lg lg:text-xl text-gray-500 font-light tracking-widest uppercase">
+          01 de Novembro
+        </p>
+        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 h-0.5 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+      </div>
+      
+      <div class="mt-6 sm:mt-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-yellow-50 to-white bg-opacity-60 rounded-2xl border border-yellow-200 backdrop-blur-sm">
+        <p id="mensagem" class="font-lato text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-light"></p>
+      </div>
+      
+      <div class="mt-6 sm:mt-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-yellow-50 to-white bg-opacity-70 rounded-2xl border border-yellow-300">
+        <p class="font-lato text-xs sm:text-sm lg:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed font-light">
+          Se você ainda não nos presenteou, aqui embaixo está o site para poder nos presentear por o início dessa jornada:
+        </p>
+        <a href="https://seu-site-de-presentes.com" target="_blank" 
+           class="inline-block button-gradient text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20">
+          🎁 Enviar Presente
+        </a>
+      </div>
     </div>
   </div>
 
@@ -62,7 +145,7 @@
 
     // Mensagem elegante e neutra
     document.getElementById("mensagem").innerHTML = 
-      `É com imensa alegria que convidamos <strong>${nome}</strong> para celebrar conosco o início de nossa vida a dois. 
+      `É com imensa alegria que convidamos <strong class="text-gray-800">${nome}</strong> para celebrar conosco o início de nossa vida a dois. 
       Sua presença será uma honra e tornará este momento ainda mais especial e inesquecível. 💍✨`;
   </script>
 </body>
