@@ -10,16 +10,16 @@
   
   <!-- WhatsApp Meta Tags -->
   <meta property="og:title" content="Convite Casamento">
-  <meta property="og:description" content="Gabriel & Leliane">
+  <meta property="og:description" content="Convite de Casamento">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Convite de Casamento Gabriel & Leliane">
+  <meta property="og:image:alt" content="Convite de Casamento">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
-  <meta name="description" content="Gabriel & Leliane - 01 de Novembro">
+  <meta name="description" content="Convite de Casamento">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -128,14 +128,14 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">São Paulo</span>
+            <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">Araraquara</span>
           </div>
           
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">13:00</span>
+            <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">15:00</span>
           </div>
         </div>
         
@@ -145,7 +145,12 @@
       <div class="mt-4 sm:mt-6 lg:mt-8 p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-teal-50 via-white to-cyan-50 bg-opacity-80 rounded-2xl border-2 border-teal-300 border-opacity-30 backdrop-blur-sm shadow-inner">
         <div class="relative">
           <div class="absolute inset-0 bg-gradient-to-r from-transparent via-teal-100 to-transparent opacity-30 rounded-xl"></div>
-          <p id="mensagem" class="font-playfair text-base sm:text-lg lg:text-xl text-gray-800 leading-relaxed font-normal italic relative z-10 tracking-wide text-center"></p>
+          <p class="font-playfair text-base sm:text-lg lg:text-xl text-gray-800 leading-relaxed font-normal italic relative z-10 tracking-wide text-center">
+            <span class="text-lg sm:text-xl lg:text-2xl">É</span> com <em class="font-semibold text-teal-700">imensa alegria</em> e <em class="font-semibold text-teal-700">corações transbordantes</em> que convidamos você<br><br>
+            para <em class="font-semibold text-teal-700">celebrar conosco</em> este momento <em class="font-semibold text-teal-700">sagrado</em> e <em class="font-semibold text-teal-700">inesquecível</em>,<br>
+            onde duas almas se tornam <em class="font-semibold text-teal-700">uma só</em> diante de Deus.<br><br>
+            <span class="text-base sm:text-lg text-gray-600 font-light">Sua presença abençoará nossa união e tornará este dia ainda mais especial.</span>
+          </p>
         </div>
       </div>
       
@@ -175,7 +180,7 @@
         <p class="font-lato text-xs sm:text-sm lg:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed font-light">
           Por favor, confirme sua presença em nosso casamento para que possamos nos organizar melhor:
         </p>
-        <a href="https://convidados.centralizando.com" target="_blank" 
+        <a href="#" target="_blank" 
            class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,7 +202,7 @@
         <p class="font-lato text-xs sm:text-sm lg:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed font-light">
           Se você ainda não nos presenteou, aqui embaixo está o site para poder nos presentear pelo início dessa jornada:
         </p>
-        <a href="https://www.centralizando.com/" target="_blank" 
+        <a href="#" target="_blank" 
            class="inline-block button-gradient text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -215,18 +220,5 @@
     </div>
   </div>
 
-  <script>
-    // Pega o parâmetro "nome" da URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const nome = urlParams.get("nome") || "Convidado(a)";
-
-    // Mensagem elegante e formal com estilo caligráfico
-    document.getElementById("mensagem").innerHTML = 
-      `<span class="text-lg sm:text-xl lg:text-2xl">É</span> com <em class="font-semibold text-teal-700">imensa alegria</em> e <em class="font-semibold text-teal-700">corações transbordantes</em> que convidamos<br><br>
-      <span class="font-bold text-xl sm:text-2xl lg:text-3xl text-teal-800 tracking-wider">${nome}</span><br><br>
-      para <em class="font-semibold text-teal-700">celebrar conosco</em> este momento <em class="font-semibold text-teal-700">sagrado</em> e <em class="font-semibold text-teal-700">inesquecível</em>,<br>
-      onde duas almas se tornam <em class="font-semibold text-teal-700">uma só</em> diante de Deus.<br><br>
-      <span class="text-base sm:text-lg text-gray-600 font-light">Sua presença abençoará nossa união e tornará este dia ainda mais especial.</span>`;
-  </script>
 </body>
 </html>
