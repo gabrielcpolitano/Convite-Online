@@ -108,11 +108,8 @@
     
     <!-- Conteúdo principal -->
     <div class="relative z-10 text-center space-y-3 sm:space-y-4 lg:space-y-6">
-      <h2 class="font-playfair text-lg sm:text-xl lg:text-2xl text-gray-600 italic font-normal">
-        Convite de Casamento
-      </h2>
-      
-      <h1 class="font-libertinus text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-600 drop-shadow-lg">
+ 
+      <h1 class="mt-20 font-libertinus text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-600 drop-shadow-lg">
         Gabriel & Leliane
       </h1>
       
@@ -162,9 +159,9 @@
           </svg>
           <div>
             <p class="font-lato text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed font-light italic">
-              "Por isso, deixará o homem pai e mãe e se unirá à sua mulher, e serão dois numa só carne."
+              "Assim, eles já não são dois, mas uma só carne. Portanto, o que Deus uniu, ninguém o separe"
             </p>
-            <p class="font-lato text-xs sm:text-sm text-gray-500 mt-2 font-medium">— Efésios 5:31</p>
+            <p class="font-lato text-xs sm:text-sm text-gray-500 mt-2 font-medium"><strong>Mateus 19:6</strong></p>
           </div>
         </div>
       </div>
@@ -180,7 +177,7 @@
         <p class="font-lato text-xs sm:text-sm lg:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed font-light">
           Por favor, confirme sua presença em nosso casamento para que possamos nos organizar melhor:
         </p>
-        <a href="#" target="_blank" 
+        <a href="https://wa.me/5516993989607?text=Olá%20Gabriel%20e%20Leliane,%20confirmo%20minha%20presença%20no%20casamento%20de%20vocês!" target="_blank" 
            class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,20 +194,20 @@
           <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-1zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
           </svg>
-          <h3 class="font-playfair text-lg sm:text-xl text-teal-700 font-semibold">Lista de Presentes</h3>
+          <h3 class="font-playfair text-lg sm:text-xl text-teal-700 font-semibold">Presentes</h3>
         </div>
         <p class="font-lato text-xs sm:text-sm lg:text-base text-gray-700 mb-4 sm:mb-6 leading-relaxed font-light">
           Se você ainda não nos presenteou, aqui embaixo está o site para poder nos presentear pelo início dessa jornada:
         </p>
-        <a href="#" target="_blank" 
-           class="inline-block button-gradient text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20">
+        <button onclick="openGiftModal()" 
+           class="inline-block button-gradient text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base lg:text-lg font-normal tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 border-2 border-white border-opacity-20 cursor-pointer">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-1zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
             </svg>
             Enviar Presente
           </div>
-        </a>
+        </button>
       </div>
       
       <!-- Flores decorativas embaixo da lista de presentes -->
@@ -219,6 +216,94 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal de Presentes -->
+  <div id="giftModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4" onclick="closeGiftModal()">
+    <div class="bg-white rounded-3xl max-w-md w-full mx-auto p-6 sm:p-8 relative transform transition-all duration-300" onclick="event.stopPropagation()">
+      <!-- Botão de fechar -->
+      <button onclick="closeGiftModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      
+      <!-- Cabeçalho do modal -->
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-1zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+          </svg>
+        </div>
+        <h3 class="font-playfair text-2xl text-gray-800 font-semibold">Escolha seu Presente</h3>
+        <p class="font-lato text-gray-600 mt-2">Selecione uma das opções abaixo para nos presentear</p>
+      </div>
+      
+      <!-- Opções de presente -->
+      <div class="space-y-4">
+        <!-- Presente em dinheiro -->
+        <a href="https://www.centralizando.com/" target="_blank" 
+           class="block w-full p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl hover:border-green-400 transition-all duration-300 hover:shadow-lg group">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+              </svg>
+            </div>
+            <div class="flex-1 text-left">
+              <h4 class="font-playfair text-lg font-semibold text-gray-800">Presente em Dinheiro</h4>
+              <p class="font-lato text-sm text-gray-600">Contribua diretamente para nossa nova jornada</p>
+            </div>
+            <svg class="w-5 h-5 text-green-500 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+        
+        <!-- Presente itens para casa -->
+        <a href="https://casmart.centralizando.com/" target="_blank" 
+           class="block w-full p-4 bg-gradient-to-r from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl hover:border-teal-400 transition-all duration-300 hover:shadow-lg group">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/>
+              </svg>
+            </div>
+            <div class="flex-1 text-left">
+              <h4 class="font-playfair text-lg font-semibold text-gray-800">Itens para Casa</h4>
+              <p class="font-lato text-sm text-gray-600">Escolha presentes para nosso lar</p>
+            </div>
+            <svg class="w-5 h-5 text-teal-500 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openGiftModal() {
+      const modal = document.getElementById('giftModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeGiftModal() {
+      const modal = document.getElementById('giftModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Fechar modal com ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeGiftModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
