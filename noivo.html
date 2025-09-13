@@ -10,7 +10,7 @@
   
   <!-- WhatsApp Meta Tags -->
   <meta property="og:title" content="Convite Casamento">
-  <meta property="og:description" content="Gabriel & Leliane  ">
+  <meta property="og:description" content="Gabriel & Leliane ">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop&auto=format">
@@ -29,6 +29,12 @@
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&family=Libertinus+Serif+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS para mapa -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   
   <style>
     @tailwind base;
@@ -91,7 +97,6 @@
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-gray-700 via-gray-800 to-gray-700 flex items-center justify-center p-2 sm:p-4 lg:p-6 font-lato">
-</body>
   <div class="convite-gradient relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl w-full mx-auto rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-8 lg:p-12 border-2 border-teal-400 overflow-hidden animate-fade-in">
     
     <!-- Background com transparência -->
@@ -125,7 +130,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">Araraquara</span>
+            <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">Araraquara - SP</span>
           </div>
           
           <div class="flex items-center gap-2">
@@ -133,6 +138,63 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
             <span class="font-lato text-sm sm:text-base lg:text-lg font-medium">15:00</span>
+          </div>
+        </div>
+        
+        <!-- Localização Detalhada -->
+        <div class="mt-6 p-4 sm:p-6 bg-gradient-to-br from-purple-50 to-pink-50 bg-opacity-80 rounded-2xl border-2 border-purple-300 border-opacity-30 backdrop-blur-sm shadow-inner">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <h3 class="font-playfair text-lg sm:text-xl text-purple-700 font-semibold">Localização do Casamento</h3>
+          </div>
+          
+          <div class="text-center mb-4">
+            <p class="font-lato text-sm sm:text-base text-gray-700 font-medium">
+              Local da Cerimônia<br>
+              <span class="text-xs sm:text-sm text-gray-600">R. José Mussi, 400 - Lot. Cociza<br>
+              Araraquara - SP, 14803-045</span>
+            </p>
+          </div>
+          
+          <!-- Mapa -->
+          <div class="mb-4 rounded-2xl overflow-hidden shadow-lg" style="height: 250px; background: #f0f0f0;">
+            <div id="map" style="height: 100%; width: 100%;"></div>
+          </div>
+          
+          <!-- Botões de Navegação -->
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="https://www.google.com/maps/dir//R.+Jos%C3%A9+Mussi,+400+-+Lot.+Cociza,+Araraquara+-+SP,+14803-045/@-21.7905852,-48.230384,21z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94b8f10e7e7ce5a3:0x72b7c13ee329d61a!2m2!1d-48.2301859!2d-21.790519?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              Abrir no Google Maps
+            </a>
+            
+            <a href="https://waze.com/ul?ll=-21.790519,-48.2301859&navigate=yes" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Abrir no Waze
+            </a>
+            
+            <button onclick="getDirections()" 
+               class="inline-flex items-center justify-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+              </svg>
+              Como Chegar
+            </button>
+          </div>
+          
+          <!-- Distância do usuário -->
+          <div id="distance-info" class="mt-4 text-center text-sm text-gray-600 hidden">
+            <p id="distance-text"></p>
           </div>
         </div>
         
@@ -145,7 +207,7 @@
           <p class="font-playfair text-base sm:text-lg lg:text-xl text-gray-800 leading-relaxed font-normal italic relative z-10 tracking-wide text-center">
             <span class="text-lg sm:text-xl lg:text-2xl">É</span> com <em class="font-semibold text-teal-700">imensa alegria</em> e <em class="font-semibold text-teal-700">corações transbordantes</em> que te convidamos<br>
             para <em class="font-semibold text-teal-700">celebrar conosco</em> este momento <em class="font-semibold text-teal-700">sagrado</em> e <em class="font-semibold text-teal-700">inesquecível</em>,<br>
-            onde dois corpos se tornam <em class="font-semibold text-teal-700">uma só</em> diante de Deus.<br><br>
+            onde dois corpos se tornam <em class="font-semibold text-teal-700">um só</em> diante de Deus.<br><br>
             <span class="text-base sm:text-lg text-gray-600 font-light">Sua presença abençoará nossa união e tornará este dia ainda mais especial!</span>
           </p>
         </div>
@@ -241,7 +303,7 @@
       <!-- Opções de presente -->
       <div class="space-y-4">
         <!-- Presente em dinheiro -->
-        <a href="https://www.centralizando.com/" target="_blank" 
+        <a href="https://www.centralizando.com/" target="_blank" rel="noopener noreferrer" 
            class="block w-full p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl hover:border-green-400 transition-all duration-300 hover:shadow-lg group">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -260,7 +322,7 @@
         </a>
         
         <!-- Presente itens para casa -->
-        <a href="https://casmart.centralizando.com/" target="_blank" 
+        <a href="https://casmart.centralizando.com/" target="_blank" rel="noopener noreferrer" 
            class="block w-full p-4 bg-gradient-to-r from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl hover:border-teal-400 transition-all duration-300 hover:shadow-lg group">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -302,6 +364,122 @@
       if (e.key === 'Escape') {
         closeGiftModal();
       }
+    });
+
+    // Coordenadas do local real do casamento em Araraquara
+    const churchCoords = [-21.790519, -48.2301859];
+    let map;
+    let userMarker;
+
+    // Inicializar mapa
+    function initMap() {
+      map = L.map('map').setView(churchCoords, 16);
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Marcador do local da festa
+      const churchIcon = L.divIcon({
+        html: `<div style="background-color: #8b5cf6; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+                 <svg style="width: 16px; height: 16px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                 </svg>
+               </div>`,
+        className: 'custom-div-icon',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+      });
+
+      L.marker(churchCoords, { icon: churchIcon })
+        .addTo(map)
+        .bindPopup('<b>Local da Cerimônia</b><br>R. José Mussi, 400<br>Gabriel & Leliane')
+        .openPopup();
+    }
+
+    // Função para obter direções
+    function getDirections() {
+      if (navigator.geolocation) {
+        document.getElementById('distance-info').classList.remove('hidden');
+        document.getElementById('distance-text').innerHTML = '<i>Obtendo sua localização...</i>';
+        
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const userLat = position.coords.latitude;
+          const userLon = position.coords.longitude;
+          
+          // Calcular distância
+          const distance = calculateDistance(userLat, userLon, churchCoords[0], churchCoords[1]);
+          document.getElementById('distance-text').innerHTML = 
+            `📍 Você está a aproximadamente <strong>${distance.toFixed(1)} km</strong> da festa`;
+          
+          // Adicionar marcador do usuário no mapa
+          if (userMarker) {
+            map.removeLayer(userMarker);
+          }
+          
+          const userIcon = L.divIcon({
+            html: `<div style="background-color: #ef4444; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+                     <svg style="width: 12px; height: 12px; color: white;" fill="currentColor" viewBox="0 0 20 20">
+                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                     </svg>
+                   </div>`,
+            className: 'custom-div-icon',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
+          });
+          
+          userMarker = L.marker([userLat, userLon], { icon: userIcon })
+            .addTo(map)
+            .bindPopup('Sua localização atual');
+          
+          // Ajustar zoom para mostrar ambos os pontos
+          const group = new L.featureGroup([userMarker, L.marker(churchCoords)]);
+          map.fitBounds(group.getBounds().pad(0.1));
+          
+          // Oferecer opções de navegação
+          const googleMapsUrl = `https://www.google.com/maps/dir/${userLat},${userLon}/${churchCoords[0]},${churchCoords[1]}`;
+          const wazeUrl = `https://waze.com/ul?ll=${churchCoords[0]},${churchCoords[1]}&navigate=yes&from=${userLat},${userLon}`;
+          
+          document.getElementById('distance-text').innerHTML += `<br>
+            <div class="flex gap-2 justify-center mt-2">
+              <a href="${googleMapsUrl}" target="_blank" class="text-blue-600 hover:text-blue-800 text-xs underline">Ver rota no Google Maps</a>
+              <span class="text-xs text-gray-400">|</span>
+              <a href="${wazeUrl}" target="_blank" class="text-cyan-600 hover:text-cyan-800 text-xs underline">Navegar com Waze</a>
+            </div>`;
+            
+        }, function(error) {
+          document.getElementById('distance-text').innerHTML = 
+            '❌ Não foi possível obter sua localização. Verifique se permitiu o acesso à localização.';
+        }, {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 300000
+        });
+      } else {
+        document.getElementById('distance-info').classList.remove('hidden');
+        document.getElementById('distance-text').innerHTML = 
+          '❌ Seu navegador não suporta geolocalização.';
+      }
+    }
+
+    // Função para calcular distância entre dois pontos
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371; // Raio da Terra em km
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      const d = R * c;
+      return d;
+    }
+
+    // Inicializar mapa quando a página carregar
+    document.addEventListener('DOMContentLoaded', function() {
+      // Aguardar um pouco para garantir que o DOM está pronto
+      setTimeout(initMap, 500);
     });
   </script>
 
